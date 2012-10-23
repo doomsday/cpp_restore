@@ -1,4 +1,5 @@
-#include "dc.hpp"
+#include "parser_impl.hpp"
+#include "table.hpp"
 
 double Parser::prim(bool get){
 

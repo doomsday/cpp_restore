@@ -1,6 +1,10 @@
-#include "dc.hpp"
+#include "lexer.hpp"
+#include "error.hpp"
+#include "driver.hpp"
 #include <iostream>
 #include <cctype>
+
+using namespace Error;
 
 Lexer::Token_value Lexer::curr_tok;
 double Lexer::number_value;
@@ -10,12 +14,12 @@ Lexer::Token_value Lexer::get_token() {
 
     using Driver::input;
     using Lexer::curr_tok;
-    extern istream* input;
+    extern std::istream* input;
     char ch;
 
     do { // skip whitespace except '\n'
-        if(!input->get(ch)) return Lexer::curr_tok = END;    // istream& get ( char& c ); Extracts a character from the stream and stores it in c
-    } while (ch != '\n' && isspace(ch));              // аЕбаЛаИ ch аНаЕ баИаМаВаОаЛ аНаОаВаОаЙ бббаОаКаИ а аЕбаЛаИ ch ббаО аПбаОаБаЕаЛ
+        if(!input->get(ch)) return Lexer::curr_tok = END;       // istream& get ( char& c ); Extracts a character from the stream and stores it in c
+    } while (ch != '\n' && isspace(ch));                        // ебать мой хуй, что это блять тут случилось с кодировкой?
 
     switch (ch) {
     case 0:

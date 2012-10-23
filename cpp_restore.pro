@@ -5,9 +5,13 @@ CONFIG -= qt
 SOURCES += main.cpp \
     lexer.cpp \
     parser.cpp \
-    table.cpp \
-    error.cpp
+    table.cpp
 
 HEADERS += \
-    dc.hpp
+    parser.hpp \
+    parser_impl.hpp \
+    error.hpp \
+    lexer.hpp \
+    table.hpp \
+    driver.hpp
 

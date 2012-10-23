@@ -1,12 +1,16 @@
-#include "dc.hpp"
+#include "parser.hpp"
+#include "lexer.hpp"
+#include "error.hpp"
+#include "table.hpp"
+#include "driver.hpp"
 #include <iostream>
 #include <sstream>
 
 using namespace std;
-using namespace Driver;
 using namespace Error;
 using namespace Lexer;
 using namespace Parser;
+using namespace Driver;
 
 int Driver::no_of_errors = 0;
 std::istream* Driver::input = 0;
